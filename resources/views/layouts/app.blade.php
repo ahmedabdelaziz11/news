@@ -10,8 +10,9 @@
 	</head>
 
 	<body>
-            @include('layouts.sidebar')
+            @include('layouts.herder')
             @include('layouts.navbar')
+            @include('layouts.sidebar')
             @yield('content')
             @include('layouts.footer')
             @include('layouts.footer-scripts')	
