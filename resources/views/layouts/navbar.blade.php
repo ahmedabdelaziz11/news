@@ -8,10 +8,10 @@
 
           <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
               <div class="navbar-nav mr-auto">
-                  <a href="Home.html" class="nav-item nav-link active">Home</a>
-                  <a href="single-page.html" class="nav-item nav-link">News</a>
-                  <a href="single-page.html" class="nav-item nav-link">prediction</a>
-                  <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                  <a href="/" class="nav-item nav-link active">Home</a>
+                  <a href="#" class="nav-item nav-link">News</a>
+                  <a href="#" class="nav-item nav-link">prediction</a>
+                  <a href="#" class="nav-item nav-link">Contact Us</a>
               </div>
           </div>
       </nav>
