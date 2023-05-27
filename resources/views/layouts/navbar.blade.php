@@ -10,7 +10,7 @@
               <div class="navbar-nav mr-auto">
                   <a href="/" class="nav-item nav-link active">Home</a>
                   <a href="#" class="nav-item nav-link">News</a>
-                  <a href="#" class="nav-item nav-link">prediction</a>
+                  <a href="/prediction" class="nav-item nav-link">prediction</a>
                   <a href="#" class="nav-item nav-link">Contact Us</a>
               </div>
           </div>

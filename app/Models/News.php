@@ -14,6 +14,7 @@ class News extends Model
         'body',
         'image',
         'date',
+        'publisher',
         'category_id',
     ];
 

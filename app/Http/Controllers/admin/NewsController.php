@@ -27,6 +27,7 @@ class NewsController extends Controller
         $news = News::create([
             'title' => $request->title,
             'body' => $request->body,
+            'publisher' => $request->publisher,
             'date' => now(),
             'category_id' => $request->category_id,
         ]);
@@ -48,6 +49,7 @@ class NewsController extends Controller
         $news->update([
             'title' => $request->title,
             'body' => $request->body,
+            'publisher' => $request->publisher,
             'date' => now(),
             'category_id' => $request->category_id,
         ]);

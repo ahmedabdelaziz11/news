@@ -59,6 +59,12 @@ Add News
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
+                                        <label for="exampleInputName">Publisher</label>
+                                        <input type="text" name="publisher" class="form-control"  placeholder="Enter publisher name" required>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
                                         <label for="exampleInputName">upload Image</label>
                                         <input type="file" class="form-control" name="image">
                                     </div>

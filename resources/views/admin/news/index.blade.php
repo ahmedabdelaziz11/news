@@ -54,6 +54,7 @@ News
                                     <th style="width: 10px">#</th>
                                     <th>Title</th>
                                     <th>Date</th>
+                                    <th>Publisher</th>
                                     <th>Category</th>
                                     <th style="width: 40px">Operations</th>
                                 </tr>
@@ -66,6 +67,7 @@ News
                                     <td>
                                         {{$news->date}}
                                     </td>
+                                    <td>{{$news->publisher}}</td>
                                     <td>{{$news->category->name}}</td>
 
                                     <td>
