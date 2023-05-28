@@ -7,7 +7,7 @@
 @endsection
 
 @section('title')
-Categories
+Admins
 @stop
 
 @section('content')
@@ -16,12 +16,12 @@ Categories
         <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-            <h1>Categories</h1>
+            <h1>Admins</h1>
             </div>
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/admin/dashbord">Dashbord</a></li>
-                <li class="breadcrumb-item active">Categories</li>
+                <li class="breadcrumb-item active">Admins</li>
             </ol>
             </div>
         </div>
@@ -35,12 +35,12 @@ Categories
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Categories</h3>
+                        <h3 class="card-title">Admins</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
         
                                 <div class="input-group-append">
-                                    <a href="categories/create" class="btn btn-default">
+                                    <a href="admins/create" class="btn btn-default">
                                         <i class="fas fa-plus"></i> add
                                     </a>
                                 </div>
@@ -53,24 +53,25 @@ Categories
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Name</th>
-                                    <th>News Count</th>
+                                    <th>Email</th>
                                     <th style="width: 40px">Operations</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($users as $user)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$category->name}}</td>
+                                    <td>{{$user->name}}</td>
                                     <td>
-                                        {{$category->news_count}}
+                                        {{$user->email}}
                                     </td>
                                     <td>
-                                        <a href="/admin/categories/{{$category->id}}/edit">edit</a>
+                                        <a href="/admin/admins/{{$user->id}}/edit">edit</a>
                                         |
-                                        <form action="{{route('categories.destroy',$category->id)}}" method="post" class="delete-form">
+                                        <form action="{{route('admins.destroy',$user->id)}}" method="post" class="delete-form">
                                             {{ method_field('delete') }}
                                             {{ csrf_field() }}
+                                            <input type="hidden" name="id" value="{{$user->id}}">
                                             <button type="submit" class="btn btn-sm btn-danger btn-sm" onclick="alert('are you to delete ?')">Delete</button>
                                         </form>
                                     </td>

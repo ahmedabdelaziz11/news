@@ -10,4 +10,9 @@
 <link href="{{URL::asset('assets/css/slick/slick.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/css/slick/slick-theme.css')}}" rel="stylesheet">
 <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet">
+<style>
+    a:hover {
+  color: orangered;
+}
+</style>
 @yield('css')

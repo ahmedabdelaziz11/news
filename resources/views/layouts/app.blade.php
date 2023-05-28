@@ -10,7 +10,6 @@
 	</head>
 
 	<body>
-            @include('layouts.herder')
             @include('layouts.navbar')
             @include('layouts.sidebar')
             @yield('content')

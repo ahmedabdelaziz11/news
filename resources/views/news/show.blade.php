@@ -30,9 +30,13 @@ Dashboard
                     <div class="sn-img">
                         <img src="{{asset('storage/logos/'.$news->image)}}" />
                     </div>
+
                     <div class="sn-content">
                         <h1 class="sn-title">{{$news->title}}</h1>
+                        <p class="mr-3 mb-4" style="font-weight: bold;display: inline;"> BY {{ $news->publisher }} </p>  <p class="mb-4" style="display: inline;">{{date('F d, Y', strtotime($news->date))}}</p>
+
                         <p>{{ $news->body }}</p>
+
                     </div>
                 </div>
                 <div class="sn-related">

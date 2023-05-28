@@ -4,15 +4,14 @@
         <h1 style="margin:0; color:#ddd; padding:10px; border-bottom:1px solid #666">Menu</h1>
         <nav>
             <a href="#">Home</a>
-            <a href="#">News</a>
             <ul class="nav flex-column" id="nav_accordion">
 
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#">News <i class="fa fa-chevron-down"></i></a>
                     @php $categories = App\Models\Category::latest()->take(8)->get();@endphp
                     <ul class="submenu collapse">
                         @foreach ($categories as $category) 
-                            <li><a class="nav-link" href="#">{{$category->name}}</a></li>
+                            <li><a class="nav-link" href="/news-search/{{$category->id}}">{{$category->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>

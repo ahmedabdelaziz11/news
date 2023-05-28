@@ -36,6 +36,18 @@
                             News
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin/admins" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                            Admins
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/users-list" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                            Users
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

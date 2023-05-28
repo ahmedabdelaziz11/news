@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\NewsController;
@@ -10,4 +11,8 @@ Route::middleware(['auth', 'IsAdmin'])->prefix('admin')->group(function () {
     Route::get('dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('categories', CategoryController::class);
     Route::resource('news', NewsController::class);
+    Route::resource('admins', AdminController::class);
+    Route::get('users-list', function(){
+        return view('admin.user.index');
+    });
 });

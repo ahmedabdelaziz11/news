@@ -76,7 +76,7 @@ News
                                         <form action="{{route('news.destroy',$news->id)}}" method="post" class="delete-form">
                                             {{ method_field('delete') }}
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-sm btn-danger btn-sm">Delete</button>
+                                            <button type="submit" class="btn btn-sm btn-danger btn-sm" onclick="alert('are you to delete ?')">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
