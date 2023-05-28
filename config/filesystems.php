@@ -36,6 +36,13 @@ return [
             'throw' => false,
         ],
 
+        'my_files' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/news',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

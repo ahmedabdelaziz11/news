@@ -76,7 +76,6 @@ class NewsController extends Controller
         $logoExtension = $file->getClientOriginalExtension();
 
         $logoNameToStore = $logoName.'_'.time().'.'.$logoExtension;
-
         $file->storeAs('public/logos',$logoNameToStore);
 
         return $logoNameToStore;

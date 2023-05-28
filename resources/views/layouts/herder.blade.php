@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4">
                 <div class="b-logo">
-                    <a href="Home.html">
+                    <a href="/">
                         <img src="{{URL::asset('assets/img/logo.png')}}" alt="Logo">
                     </a>
                 </div>
@@ -20,18 +20,18 @@
                 @if (!Auth::check())
                     
                 @endif
-                <a href="/login" class="btn rounded" style="    
-                    background-color: orange;
-                    color: white;
-                    border: none;
-                    width: 30%;">Login
-                </a>
-                <a href="/register" class="btn rounded" style="    
-                    background-color: #fa6d6b;
-                    color: white;
-                    border: none;
-                    ">sign up
-                </a>
+                    <a href="/login" class="btn rounded" style="    
+                        background-color: orange;
+                        color: white;
+                        border: none;
+                        width: 30%;">Login
+                    </a>
+                    <a href="/register" class="btn rounded" style="    
+                        background-color: #fa6d6b;
+                        color: white;
+                        border: none;
+                        ">sign up
+                    </a>
             </div>
         </div>
     </div>
