@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/prediction',function(){
     return view('prediction');
 });
-
+Route::post('postPredict',[NewsController::class, 'predict']);
 Route::get('news/{news}',[NewsController::class, 'show']);
 
 Route::get('/dashboard', function () {

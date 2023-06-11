@@ -41,7 +41,7 @@ Dashboard
                         @foreach($fourNews as $news)
                             <div class="col-md-6">
                                 <div class="tn-img">
-                                    <img style="width:100px" src="{{asset('storage/logos/'.$news->image)}}" />
+                                    <img src="{{asset('storage/logos/'.$news->image)}}" />
                                     <div class="tn-title">
                                         <a href="/news/{{$news->id}}">{{$news->title}}</a>
                                     </div>

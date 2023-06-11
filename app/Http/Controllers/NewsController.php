@@ -28,4 +28,27 @@ class NewsController extends Controller
     {
         return view('news.show',compact('news'));
     }
+
+
+    public function predict(Request $request)
+    {
+        $data = array(
+            'news_content' => $request->text,
+        );
+        $curl = curl_init('http://127.0.0.1:5000/predict');
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+        $response = curl_exec($curl);
+    
+        if (curl_errno($curl)) {
+            $error_message = curl_error($curl);
+            // Handle the error appropriately
+        }
+    
+        curl_close($curl);
+        $data = json_decode($response, true);
+        return view('prediction',compact('data'));    
+    }
 }

@@ -19,31 +19,31 @@ Dashboard
         <div class="flex items-center flex-shrink-0 text-gray-900 mr-6">
         </div>
     </nav>
+    <form action="/postPredict" method="post">
+        @csrf 
     <div class="w-full">
         <h1 class="text-3xl text-center font-bold mb-8">Check if news is real or fake!</h1>
         <div class="flex flex-col items-center">
-            <form action="/" method="POST" class="w-full max-w-lg">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3">
                         <textarea class="bg-gray-200 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            rows="5" name="text" placeholder="Enter the news here..." required></textarea>
+                            rows="5" id="news" name="text" placeholder="Enter the news here..." required></textarea>
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit"
+                    <button id="submitBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit"
                         name="predict">Predict</button>
                 </div>
             </form>
               <div class="mt-12">
-                <p class="text-2xl font-bold text-center">Result is</p>
-                <div class="w-full h-4 bg-gray-300 rounded-full mt-4">
-                    <div class="h-full bg-blue-500 rounded-full">
-                    </div>
+                <p class="text-2xl font-bold text-center">Result is {{$data['result']??''}}</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p class="text-xl text-center mt-4">The news is <span>probability</span> real</p>
+                <p class="text-xl text-center mt-4">The news is <span>probability</span>  {{$data['percentage']??''}}%</p>
               </div>
         </div>
-
+        
         <p class="text-xl text-center mt-4"> (Give us some feedback if we predicted it wrong :)</p>
 
         <div class="flex justify-center mt-6">
@@ -56,4 +56,5 @@ Dashboard
 @endsection
 
 @section('js')
+
 @endsection
