@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.min.css')}}">
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <style>
     .cards {
@@ -96,7 +96,7 @@ Dashboard
                 </div>
             </div>
         </form>
-        <div class="row">
+        <div class="row"> 
             <div class="main">
                 <ul class="cards">
                     @foreach($news as $new)
@@ -104,7 +104,7 @@ Dashboard
                             <div class="card">
                             <div class="card_image"><img src="{{asset('storage/logos/'.$new->image)}}"></div>
                             <div class="card_content">
-                                <h2 class="card_title">{{$new->title}}</h2>
+                                <h2 class="card_title">{{$new->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</h2>
                                 <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
                                 <a href="/news/{{$new->id}}" class="btn card_btn">Read More</a>
                             </div>

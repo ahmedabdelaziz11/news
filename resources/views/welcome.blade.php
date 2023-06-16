@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.min.css')}}">
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
 
@@ -24,7 +24,7 @@ Dashboard
                                 <div class="tn-img">
                                     <img src="{{asset('storage/logos/'.$news->image)}}">
                                     <div class="tn-title">
-                                        <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                        <a href="/news/{{$news->id}}">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@ Dashboard
                                 <div class="tn-img">
                                     <img src="{{asset('storage/logos/'.$news->image)}}" />
                                     <div class="tn-title">
-                                        <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                        <a href="/news/{{$news->id}}">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@ Dashboard
                             <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                            <a class="nav-link" data-toggle="pill" href="#popular">Popular News
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
@@ -115,7 +115,7 @@ Dashboard
                                         <img src="{{asset('storage/logos/'.$news->image)}}" />
                                     </div>
                                     <div class="tn-title">
-                                        <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                        <a href="/news/{{$news->id}}">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                     </div>
                                 </div>
                             @endforeach
@@ -132,7 +132,7 @@ Dashboard
                                         <img src="{{asset('storage/logos/'.$news->image)}}" />
                                     </div>
                                     <div class="tn-title">
-                                        <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                        <a href="/news/{{$news->id}}">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                     </div>
                                 </div>
                             @endforeach
@@ -149,7 +149,7 @@ Dashboard
                                         <img src="{{asset('storage/logos/'.$news->image)}}" />
                                     </div>
                                     <div class="tn-title">
-                                        <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                        <a href="/news/{{$news->id}}">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                     </div>
                                 </div>
                             @endforeach
