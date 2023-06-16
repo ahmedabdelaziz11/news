@@ -69,6 +69,14 @@ Add News
                                         <input type="file" class="form-control" name="image">
                                     </div>
                                 </div>
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <p style="display: inline">Is Real ?</p>
+                                        <input style="width: 10%;display: inline;height: 20px;" type="checkbox" value="1" class="form-control" name="is_real">
+                                    </div>
+                                </div>
+
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>

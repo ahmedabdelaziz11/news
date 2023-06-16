@@ -29,6 +29,7 @@ class NewsController extends Controller
             'body' => $request->body,
             'publisher' => $request->publisher,
             'date' => now(),
+            'is_real' => $request->is_real ?? 0,
             'category_id' => $request->category_id,
         ]);
         if(isset($request->image)){
@@ -46,11 +47,13 @@ class NewsController extends Controller
 
     public function update(Request $request,News $news)
     {
+        // return $request;
         $news->update([
             'title' => $request->title,
             'body' => $request->body,
             'publisher' => $request->publisher,
             'date' => now(),
+            'is_real' => $request->is_real ?? 0,
             'category_id' => $request->category_id,
         ]);
 

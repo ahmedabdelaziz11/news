@@ -56,6 +56,7 @@ News
                                     <th>Date</th>
                                     <th>Publisher</th>
                                     <th>Category</th>
+                                    <th>is real</th>
                                     <th style="width: 40px">Operations</th>
                                 </tr>
                             </thead>
@@ -69,6 +70,7 @@ News
                                     </td>
                                     <td>{{$news->publisher}}</td>
                                     <td>{{$news->category->name}}</td>
+                                    <td>@if ($news->is_real) Real @else Fake @endif</td>
 
                                     <td>
                                         <a href="/admin/news/{{$news->id}}/edit">edit</a>

@@ -16,6 +16,7 @@ class News extends Model
         'date',
         'publisher',
         'category_id',
+        'is_real',
     ];
 
     public function category()

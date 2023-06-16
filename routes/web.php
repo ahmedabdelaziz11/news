@@ -18,20 +18,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/prediction',function(){
-    return view('prediction');
-});
-Route::post('postPredict',[NewsController::class, 'predict']);
-Route::get('news/{news}',[NewsController::class, 'show']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('make-predictions',[NewsController::class, 'predict']);
+Route::get('news/{news}',[NewsController::class, 'show']);
 Route::get('news-search/{cat_id?}',[NewsController::class, 'index']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/prediction',function(){ return view('prediction'); });
 });
 
 require __DIR__.'/admin.php';

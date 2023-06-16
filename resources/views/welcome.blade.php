@@ -71,7 +71,7 @@ Dashboard
                                     <div class="cn-img">
                                         <img src="{{asset('storage/logos/'.$news->image)}}" />
                                         <div class="cn-title">
-                                            <a href="/news/{{$news->id}}">{{$news->title}}</a>
+                                            <a href="/news/{{$news->id}}">{{$news->title}}@if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
-
+    <div style="margin-top: 100px"></div>
     <!-- Footer Menu End -->
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="position: fixed;bottom: 0;right: 0;left: 0;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 copyright">

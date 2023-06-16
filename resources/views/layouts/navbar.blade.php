@@ -17,7 +17,7 @@
                     <a href="/prediction" class="nav-item">prediction</a>
                 </div>
 
-                <div class="navbar-nav" style="width: 17%;">
+                <div class="navbar-nav" style="width: 30%;">
                         @if(!Auth::check())
                             <a href="/login" class="btn rounded m-2" style="    
                                 background-color: orange;
@@ -39,10 +39,24 @@
                             style="    
                                 background-color: #fa6d6b;
                                 color: white;
-                                width: 70%;
+                                width: 50%;
                                 border: none;
                                 ">log out 
                             </a>
+                            @if (auth()->user()->role == 'admin')
+                                <a 
+                                    class="btn rounded m-2" 
+                                    href="/admin/dashboard"
+                                    style="    
+                                        background-color: #efa500;
+                                        color: white;
+                                        width: 70%;
+                                        border: none;
+                                        ">Admin Dashboard 
+                                </a>
+                            @endif
+
+                            
                         @endif
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
