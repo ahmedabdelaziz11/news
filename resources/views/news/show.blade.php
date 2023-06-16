@@ -6,6 +6,7 @@
 <!-- CSS Libraries -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/fontawesome/css/all.min.css')}}">
 @endsection
 
 @section('title')
@@ -32,7 +33,7 @@ Dashboard
                     </div>
 
                     <div class="sn-content">
-                        <h1 class="sn-title">{{$news->title}}</h1>
+                        <h1 class="sn-title">{{$news->title}} @if($news->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</h1>
                         <p class="mr-3 mb-4" style="font-weight: bold;display: inline;"> BY {{ $news->publisher }} </p>  <p class="mb-4" style="display: inline;">{{date('F d, Y', strtotime($news->date))}}</p>
 
                         <p>{{ $news->body }}</p>
@@ -143,7 +144,7 @@ Dashboard
                             @endphp
                             <ul>
                                 @foreach($categories as $category)
-                                    <li><a href="/search/{{$category->id}}">{{$category->name}}</a><span>({{$category->news()->count()}})</span></li>
+                                    <li><a href="/news-search/{{$category->id}}">{{$category->name}}</a><span>({{$category->news()->count()}})</span></li>
                                 @endforeach
                             </ul>
                         </div>
