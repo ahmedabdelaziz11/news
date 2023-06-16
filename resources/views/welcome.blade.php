@@ -95,7 +95,7 @@ Dashboard
                             <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#popular">Popular News
+                            <a class="nav-link" data-toggle="pill" href="#popular">Popular News </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>

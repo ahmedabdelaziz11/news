@@ -16,7 +16,7 @@
                     </ul>
                 </li>
             </ul>
-            <a href="#">Contact Us</a>
+            <a href="/contact-us/create">Contact Us</a>
         </nav>
     </aside>
 </div>

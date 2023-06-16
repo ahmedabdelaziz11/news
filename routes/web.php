@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('news/{news}',[NewsController::class, 'show']);
 Route::get('news-search/{cat_id?}',[NewsController::class, 'index']);
+Route::resource('contact-us', ContactUsController::class)->only(['create', 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,7 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/prediction',function(){ return view('prediction'); });
     Route::post('make-predictions',[NewsController::class, 'predict']);
     Route::post('feedback',[NewsController::class, 'feedback']);
-
 });
 
 require __DIR__.'/admin.php';

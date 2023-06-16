@@ -18,4 +18,7 @@ Route::middleware(['IsAdmin'])->prefix('admin')->group(function () {
     Route::get('get-feedback',function(){
         return view('admin.feedback.index');
     });
+    Route::get('contacting-users',function(){
+        return view('admin.contacting.index');
+    });
 });

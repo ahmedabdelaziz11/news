@@ -43,6 +43,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/admin/contacting-users" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        contacting users
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/admins" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                             Admins
