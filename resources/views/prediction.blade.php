@@ -41,6 +41,7 @@ Dashboard
             <div>
                 <div class="mt-12">
                     <p class="text-2xl font-bold text-center">Result is {{$data['result']??''}}</p>
+                    <p class="text-2xl font-bold text-center">Result is {{$data['percentage']??''}}</p>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>

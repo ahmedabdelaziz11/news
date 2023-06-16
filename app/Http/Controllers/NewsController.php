@@ -59,7 +59,7 @@ class NewsController extends Controller
         }, $result);
 
         $data['news'] = $request->text;
-        $data['result'] = $result[0]*100;
+        $data['result'] = $result[0] * 100;
         $data['percentage'] = $result[1];
         return view('prediction',compact('data'));    
     }
