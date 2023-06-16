@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsComment extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'comment',
+        'news',
+        'user_id',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

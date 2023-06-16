@@ -20,7 +20,6 @@ Route::get('/', function () {
 });
 
 
-Route::post('make-predictions',[NewsController::class, 'predict']);
 Route::get('news/{news}',[NewsController::class, 'show']);
 Route::get('news-search/{cat_id?}',[NewsController::class, 'index']);
 
@@ -29,6 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/prediction',function(){ return view('prediction'); });
+    Route::post('make-predictions',[NewsController::class, 'predict']);
+    Route::post('feedback',[NewsController::class, 'feedback']);
+
 });
 
 require __DIR__.'/admin.php';

@@ -15,4 +15,7 @@ Route::middleware(['IsAdmin'])->prefix('admin')->group(function () {
     Route::get('users-list', function(){
         return view('admin.user.index');
     });
+    Route::get('get-feedback',function(){
+        return view('admin.feedback.index');
+    });
 });

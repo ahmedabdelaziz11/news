@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\News;
+use App\Models\NewsComment;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -49,6 +50,17 @@ class NewsController extends Controller
     
         curl_close($curl);
         $data = json_decode($response, true);
+        $data['news'] = $request->text;
         return view('prediction',compact('data'));    
+    }
+
+    public function feedback(Request $request)
+    {
+        NewsComment::create([
+            'news' => $request->news,
+            'comment' => $request->feedback,
+            'user_id' => auth()->user()->id,
+        ]);
+        return 'ok';
     }
 }
