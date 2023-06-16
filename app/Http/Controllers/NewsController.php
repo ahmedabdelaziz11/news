@@ -50,7 +50,17 @@ class NewsController extends Controller
     
         curl_close($curl);
         $data = json_decode($response, true);
+        $result = str_replace(['(', ')', ' '], '', $data['result']);
+        $result = explode(',', $result);
+
+        // Trim whitespace and single quotes from each element
+        $result = array_map(function ($element) {
+            return trim($element, " '");
+        }, $result);
+
         $data['news'] = $request->text;
+        $data['result'] = $result[0]*100;
+        $data['percentage'] = $result[1];
         return view('prediction',compact('data'));    
     }
 

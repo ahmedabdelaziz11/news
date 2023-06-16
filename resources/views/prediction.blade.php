@@ -44,7 +44,6 @@ Dashboard
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="text-xl text-center mt-4">The news is <span>probability</span>  {{$data['percentage']??''}}%</p>
                 </div>
             </div>
             
