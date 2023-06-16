@@ -45,7 +45,6 @@ class NewsController extends Controller
     
         if (curl_errno($curl)) {
             $error_message = curl_error($curl);
-            // Handle the error appropriately
         }
     
         curl_close($curl);
@@ -53,7 +52,6 @@ class NewsController extends Controller
         $result = str_replace(['(', ')', ' '], '', $data['result']);
         $result = explode(',', $result);
 
-        // Trim whitespace and single quotes from each element
         $result = array_map(function ($element) {
             return trim($element, " '");
         }, $result);
