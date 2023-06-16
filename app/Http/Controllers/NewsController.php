@@ -36,7 +36,7 @@ class NewsController extends Controller
         $data = array(
             'news_content' => $request->text,
         );
-        $curl = curl_init('http://127.0.0.1:5000/predict');
+        $curl = curl_init('http://127.0.0.1:5050/lstm-predict');
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
