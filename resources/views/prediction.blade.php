@@ -44,6 +44,9 @@ Dashboard
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+                    @foreach ($data['articles'] as $x)
+                        <p><a href="{{$x['url']}}">{{$x['url']}}</a></p>
+                    @endforeach
                 </div>
             </div>
             
@@ -53,6 +56,7 @@ Dashboard
                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full mr-4 feedback" type="button">Real</button>
                 <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full feedback" type="button">Fake</button>
             </div>
+
             <p class="text-xl text-center mt-4" id="feedbackSuccess" style="display: none"> your feedback is submitted successfully </p>
 
         @endif
