@@ -44,9 +44,11 @@ Dashboard
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    @foreach ($data['articles'] as $x)
+                    @forelse ($data['articles'] as $x)
                         <p><a href="{{$x['url']}}">{{$x['url']}}</a></p>
-                    @endforeach
+                    @empty
+                        <P class="text-center tx-bold m-4" style="font-size: 16px;font-weight: 900">No links found</P>
+                    @endforelse
                 </div>
             </div>
             
