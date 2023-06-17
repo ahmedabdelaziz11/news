@@ -94,10 +94,10 @@ contact us
     <h2>Contact Information</h2>
 
     <p>Email:<br>
-    If you prefer to communicate via email, you can send your inquiries or reports to <a href="mailto:info@example.com">info@example.com</a>. We will make sure to address your message promptly.</p>
+    If you prefer to communicate via email, you can send your inquiries or reports to <a href="20194288@fue.edu.eg">20194288@fue.edu.eg</a>. We will make sure to address your message promptly.</p>
 
     <p>Phone:<br>
-    For urgent matters or if you would like to discuss something over the phone, you can reach our support team at <a href="tel:+1-XXX-XXX-XXXX">+1-XXX-XXX-XXXX</a> during our office hours. Our dedicated staff will be happy to assist you.</p>
+    For urgent matters or if you would like to discuss something over the phone, you can reach our support team at <a href="tel:+20-01099622293">+20-01099622293</a> during our office hours. Our dedicated staff will be happy to assist you.</p>
 
     <p>We encourage you to use these channels to report any suspicious news articles or sources that you come across. Your contributions are crucial in our collective effort to combat the spread of fake news and promote accurate information.</p>
 
