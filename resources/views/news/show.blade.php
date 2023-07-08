@@ -70,10 +70,10 @@ Dashboard
                         <div class="tab-news">
                             <ul class="nav nav-pills nav-justified">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                    <a class="nav-link active" data-toggle="pill" href="#featured">Real</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                    <a class="nav-link" data-toggle="pill" href="#popular">Fake</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
@@ -84,6 +84,7 @@ Dashboard
                                 <div id="featured" class="container tab-pane active">
                                     @php
                                         $fourNews = App\Models\News::inRandomOrder()
+                                                        ->where('is_real',1)
                                                         ->limit(4)
                                                         ->get();
                                     @endphp 
@@ -101,6 +102,7 @@ Dashboard
                                 <div id="popular" class="container tab-pane fade">
                                     @php
                                         $fourNews = App\Models\News::inRandomOrder()
+                                                        ->where('is_real',0)
                                                         ->limit(4)
                                                         ->get();
                                     @endphp 

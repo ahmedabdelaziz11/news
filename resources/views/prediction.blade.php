@@ -40,7 +40,7 @@ Dashboard
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <div>
                 <div class="mt-12">
-                    <p class="text-2xl font-bold text-center">Result is {{$data['result']??''}} with probabilty {{number_format($data['percentage'],2)??''}} %</p>
+                    <p class="text-2xl font-bold text-center">Result is @if($data['result'] == 'true') real @else fake @endif with accuracy {{number_format($data['percentage'],2)??''}} %</p>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>

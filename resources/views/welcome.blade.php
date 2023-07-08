@@ -92,10 +92,10 @@ Dashboard
                 <div class="col-md-12">
                     <ul class="nav nav-pills nav-justified">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                            <a class="nav-link active" data-toggle="pill" href="#featured">Real News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#popular">Popular News </a>
+                            <a class="nav-link" data-toggle="pill" href="#popular">Fake News </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
@@ -106,6 +106,7 @@ Dashboard
                         <div id="featured" class="container tab-pane active">
                             @php
                                 $fourNews = App\Models\News::inRandomOrder()
+                                                ->where('is_real',1)
                                                 ->limit(4)
                                                 ->get();
                             @endphp 
@@ -123,6 +124,7 @@ Dashboard
                         <div id="popular" class="container tab-pane fade">
                             @php
                                 $fourNews = App\Models\News::inRandomOrder()
+                                                ->where('is_real',0)
                                                 ->limit(4)
                                                 ->get();
                             @endphp 
@@ -139,7 +141,7 @@ Dashboard
                         </div>
                         <div id="latest" class="container tab-pane fade">
                             @php
-                                $fourNews = App\Models\News::inRandomOrder()
+                                $fourNews = App\Models\News::latest()
                                                 ->limit(4)
                                                 ->get();
                             @endphp 
