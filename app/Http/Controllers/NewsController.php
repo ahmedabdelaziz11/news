@@ -96,6 +96,6 @@ class NewsController extends Controller
         
         $data = json_decode($response, true);
         
-        return $data['items'];
+        return $data['items'] ?? [];
     }
 }
