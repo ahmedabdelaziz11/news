@@ -51,7 +51,12 @@
   text-transform: capitalize;
   margin: 0px;
 }
-
+.sub-img{
+      max-width: 350px;
+      min-width: 350px;
+      max-height: 150px;
+      min-height: 150px;
+    }
 .card_text {
   color: #ffffff;
   font-size: 0.875rem;
@@ -102,10 +107,10 @@ Dashboard
                     @foreach($news as $new)
                         <li class="cards_item">
                             <div class="card">
-                            <div class="card_image"><img src="{{asset('storage/logos/'.$new->image)}}"></div>
+                            <div class="card_image"><img class="sub-img" src="{{asset('storage/logos/'.$new->image)}}"></div>
                             <div class="card_content">
                                 <h2 class="card_title">{{$new->title}} @if($new->is_real == 1)<i class="fa-solid fa-square-check" style="color: #2a511f;"></i>@else <i class="fa-solid fa-rectangle-xmark" style="color: #ec1818;"></i> @endif</h2>
-                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <p class="card_text mt-2">{{substr_replace($new->body,"....",60)}}</p>
                                 <a href="/news/{{$new->id}}" class="btn card_btn">Read More</a>
                             </div>
                             </div>
