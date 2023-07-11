@@ -73,7 +73,6 @@ class NewsController extends Controller
 
     public function headlines($news)
     {
-        $news = substr_replace($news,"",100);
         $apiKey = 'AIzaSyC-psdjVjoRCUGVsUFt2zLqmOaPFqSzpMI';
         $endpoint = 'https://www.googleapis.com/customsearch/v1';
         $q = urlencode($news);
