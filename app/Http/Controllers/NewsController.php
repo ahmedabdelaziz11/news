@@ -73,24 +73,22 @@ class NewsController extends Controller
 
     public function headlines($news)
     {
-        $apiKey = 'e9f75727b09849a8bf495a81f2d35de9';
-        $endpoint = 'https://newsapi.org/v2/top-headlines';
-        $q = $news; // Assuming $news contains the search query
+        $apiKey = 'AIzaSyC-psdjVjoRCUGVsUFt2zLqmOaPFqSzpMI';
+        $endpoint = 'https://www.googleapis.com/customsearch/v1';
+        $q = urlencode($news);
+        
+        $searchEngineId = 'c5fe94dcc8fcd4414';
         
         $url = $endpoint . '?' . http_build_query([
             'q' => $q,
-            'apiKey' => $apiKey,
+            'cx' => $searchEngineId,
+            'key' => $apiKey,
         ]);
         
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HEADER => false,
-            CURLOPT_HTTPHEADER => [
-                "Authorization: $apiKey",
-                'User-Agent: news',
-            ],
         ]);
         
         $response = curl_exec($curl);
@@ -98,6 +96,6 @@ class NewsController extends Controller
         
         $data = json_decode($response, true);
         
-        return $data['articles'];
+        return $data['items'];
     }
 }

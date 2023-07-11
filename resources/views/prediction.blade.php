@@ -44,8 +44,14 @@ Dashboard
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{$data['percentage']??''}}%" aria-valuenow="{{$data['percentage']??''}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+                    <div>
+                        <h3>References</h3>
+                    </div>
                     @forelse ($data['articles'] as $x)
-                        <p><a href="{{$x['url']}}">{{$x['url']}}</a></p>
+                        <p><a href="{{$x['link']}}">{{$x['link']}}</a></p>
+                        @if ($loop->iteration === 3)
+                            @break
+                        @endif
                     @empty
                         <P class="text-center tx-bold m-4" style="font-size: 16px;font-weight: 900">No links found</P>
                     @endforelse
