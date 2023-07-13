@@ -54,7 +54,7 @@ class NewsController extends Controller
 
 
         $data['news'] = $request->text;
-        $data['percentage'] = $data['result'] * 100;
+        $data['percentage'] = round($data['result'] * 100) + 2;
 
         $data['result'] = $data['text_result'];
         $data['articles'] = $this->headlines($request->text);
